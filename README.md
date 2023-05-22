@@ -11,5 +11,7 @@ We will be using a Raspberry Pi as our IoT sensor. It will be connected to a DHT
 We will be using PythonAnywhere as our web hosting service for the Django/Flask app. The app will use InfluxDB to store the data. The app will analyze the data to make decisions on when to turn on/off the water sprinkler or fan.
 # Dashboard:
 We will be using Grafana to create our dashboard. The dashboard will display real-time temperature and humidity readings from the sensors, along with graphs showing historical trends. It will also provide controls for users to turn on/off the water sprinkler or fan. We plan to use Figma to design the dashboard interface.
+![Alt text](https://github.com/amirulsyahmiii/projectproposal/blob/main/software/soft%20dashboard.PNG)
+
 # Video Demo:
 We will record a video demo of our Django/Flask app running on PythonAnywhere and provide a link to it on our Github page.
