@@ -22,6 +22,7 @@ urlpatterns = [
 	# include URL patterns for other apps in your project here
 
 	path ('welcome/', views.welcome, name = 'welcome'),
+	path ('mqtt-handler/', views.mqtt_handler, name = 'mqtt_handler')
 
 ]
 

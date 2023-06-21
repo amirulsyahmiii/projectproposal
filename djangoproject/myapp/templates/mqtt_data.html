@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultrasonic Sensor Data</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+  {% load static %}
+</head>
+<body>
+  <h1>Ultrasonic Sensor Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Ultrasonic</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Distance</td>
+        <td>{{ mqtt_data }}</td>
+      </tr>
+    </tbody>
+  </table>
+<script src="{% static 'js/mqtt_data.js' %}"></script>
+</body>
+</html>
