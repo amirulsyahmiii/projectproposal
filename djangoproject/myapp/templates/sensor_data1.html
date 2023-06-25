@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sensor Data</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Sensor Data</h1>
+
+    <h2>Ultrasonic Sensor Data</h2>
+    <div id="ultrasonic-container">
+        <table>
+            <tr>
+                <th>Ultrasonic Data</th>
+            </tr>
+            <tr>
+                <td id="ultrasonic-data">{{ ultrasonic_data }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Moisture Sensor Data</h2>
+    <div id="moisture-container">
+        <table>
+            <tr>
+                <th>Moisture Data</th>
+            </tr>
+            <tr>
+                <td id="moisture-data">{{ moisture_data }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        setInterval(function() {
+            $.ajax({
+                url: "/mqtt-handler/",  // URL to fetch updated sensor data from the server
+                type: "GET",
+                dataType: 'json',
+                success: function(data) {
+                    $("#ultrasonic-data").text(data.ultrasonic_data);  // Update the ultrasonic sensor data
+                    $("#moisture-data").text(data.moisture_data);  // Update the moisture sensor data
+                },
+                error: function() {
+                    console.log("Error occurred while refreshing sensor data.");
+                }
+            });
+        }, 1000);  // 1000 milliseconds = 1 second
+    </script>
+</body>
+</html>

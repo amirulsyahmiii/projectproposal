@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sensor Data</title>
+</head>
+<body>
+    <h1>Sensor Data</h1>
+
+    <h2>Ultrasonic Sensor Data</h2>
+    <table>
+        <tr>
+            <th>Ultrasonic Data</th>
+        </tr>
+        <tr>
+            <td>{{ ultrasonic_data }}</td>
+        </tr>
+    </table>
+
+    <h2>Moisture Sensor Data</h2>
+    <table>
+        <tr>
+            <th>Moisture Data</th>
+        </tr>
+        <tr>
+            <td>{{ moisture_data }}</td>
+        </tr>
+    </table>
+    <script>
+    setTimeout(function() {
+        location.reload();
+    }, 1000); // 1000 milliseconds = 1 second
+    </script>
+
+</body>
+</html>

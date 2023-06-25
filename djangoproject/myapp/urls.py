@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import mqtt_handler
 from . import views
 
 urlpatterns = [
