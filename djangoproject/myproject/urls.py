@@ -18,10 +18,9 @@ from django.urls import path, include
 from myapp import views  # import views from myapp
 
 urlpatterns = [
-	path('', views.home, name='home'),  # add a URL pattern for myapp's home view
+	path('', views.welcome, name='home'),  # add a URL pattern for myapp's home view
 	# include URL patterns for other apps in your project here
+	path ('mqtt-handler/', views.subscribe_to_mqtt_broker, name = 'mqtt_handler')
 
-	path ('welcome/', views.welcome, name = 'welcome'),
-	path ('mqtt-handler/', views.mqtt_handler, name = 'mqtt_handler')
 ]
 
