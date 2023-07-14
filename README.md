@@ -27,20 +27,24 @@ Open a terminal on your Ubuntu system.
 
 1. Update the package lists by running the following command:
 
-> sudo apt update
-
+```bash
+sudo apt update
+```
 2. Install Python 3 and pip (Python package installer) if they are not already installed:
 
-> sudo apt install python3 python3-pip
-
+```bash
+sudo apt install python3 python3-pip
+```
 3. Once Python and pip are installed, you can install Django using pip. Run the following command:
 
-> pip3 install Django
-
+```bash
+pip3 install Django
+```
 4. Create a new Django project (myproject) by running the following command:
 
-> django-admin startproject myproject
-
+```bash
+django-admin startproject myproject
+```
 (myproject) can be anything you like.
 
 Django will have default directories and files that are essential for web building.
@@ -64,12 +68,13 @@ To start Django server, we must be at the root Django folder which has manage.py
 
 1. Start the Django development server by running the following command:
 
-"python3 manage.py runserver"
-
+```bash
+python3 manage.py runserver
+```
 2. Open a web browser and enter the following URL:
-
-"http://localhost:8000"
-
+```bash
+ http://localhost:8000
+```
 
 ## Step 4: MySQL
 
