@@ -27,38 +27,38 @@ Open a terminal on your Ubuntu system.
 
 1. Update the package lists by running the following command:
 
-"sudo apt update"
+> sudo apt update
 
 2. Install Python 3 and pip (Python package installer) if they are not already installed:
 
-"sudo apt install python3 python3-pip"
+> sudo apt install python3 python3-pip
 
 3. Once Python and pip are installed, you can install Django using pip. Run the following command:
 
-"pip3 install Django"
+> pip3 install Django
 
 4. Create a new Django project (myproject) by running the following command:
 
-"django-admin startproject myproject"
+> django-admin startproject myproject
 
 (myproject) can be anything you like.
 
 Django will have default directories and files that are essential for web building.
 
-### manage.py:
-This is a command-line utility that allows you to interact with your Django project. You can use it to run development servers, perform database migrations, create superusers, and more.
+**manage.py:**
+>This is a command-line utility that allows you to interact with your Django project. You can use it to run development servers, perform database migrations, create superusers, and more.
 
-### settings.py:
-This file contains the configuration settings for your Django project. It includes database settings, middleware settings, static file settings, template settings, and other project-specific configurations.
+**settings.py:**
+> This file contains the configuration settings for your Django project. It includes database settings, middleware settings, static file settings, template settings, and other project-specific configurations.
 
-### apps directory:
-This directory contains the applications within your Django project. Each application typically has its own set of models, views, templates, and URL configurations.
+**apps directory:**
+> This directory contains the applications within your Django project. Each application typically has its own set of models, views, templates, and URL configurations.
 
-### migrations directory:
-This directory is created for each application and contains database migration files. Migrations are used to manage changes to your database schema over time.
+**migrations directory:**
+> This directory is created for each application and contains database migration files. Migrations are used to manage changes to your database schema over time.
 
-### templates directory:
-This directory stores the HTML templates for your Django project. Templates define the structure and layout of the rendered web pages.
+**templates directory:**
+> This directory stores the HTML templates for your Django project. Templates define the structure and layout of the rendered web pages.
 
 To start Django server, we must be at the root Django folder which has manage.py file.
 
