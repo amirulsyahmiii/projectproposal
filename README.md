@@ -21,6 +21,36 @@ We will record a video demo of our Django/Flask app running on PythonAnywhere an
 Moisture sensor and ultrasonic sensor data will be acquired by ESP32 and transmitted to Arduino IDE. Arduino IDE will be connected to a specific MQTT ip address (91.121.93.94). These data will be send to listening topics which are sensor/moisture and sensor/ultrasonic for moisture sensor and ultrasonic sensor respectively.
 
 ## Step 2: MQTT (Mosquitto)
+Open a terminal on your Ubuntu system.
+
+1. To install Mosquitto MQTT, run the following command in the terminal.
+
+```bash
+sudo apt install mosquitto
+```
+
+2. Start Mosquitto Service. After the installation is complete, Mosquitto should start automatically and you can verify the service status by running.
+```bash
+sudo systeml status mosquitto
+```
+If the service not running, start it using this command.
+```bash
+sudo systeml start mosquitto
+```
+3. Test Mosquitto. Open another terminal and subscribe to a topic.
+```bash
+mosquitto_sub -t test/topic
+```
+4. Try sending a message into your topic.
+```bash
+mosquitto_pub -t test/topic -m "Hello Thundering Jaguars"
+```
+
+## Note that when using mosquitto, you need to get the IP for MQTT broker. When you using your IPv4 and still cannot connect to the broker try use this command.
+```bash
+ping test.mosquitto.org
+```
+## After that you will get a new IP then put it in your esp to connect to the Mosquitto MQTT broker.
 
 ## Step 3: Django
 Open a terminal on your Ubuntu system.
