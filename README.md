@@ -75,6 +75,7 @@ python3 manage.py runserver
 ```bash
  http://localhost:8000
 ```
+**Once you can start the server, the installation is complete. Next, we want to integrate MQTT and MySQL with Django. The necessary files for settings.py, urls.py, views.py, and html files are already provided within the repository.**
 
 ## Step 4: MySQL
 
