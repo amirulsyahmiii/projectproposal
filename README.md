@@ -110,4 +110,24 @@ python3 manage.py runserver
 
 ## Step 4: MySQL
 
-## Step 5: Graffana
+
+## Step 5: Grafana
+Open browser and enter http://your_ip:3000 by using own IP address
+
+1. Log in using the credentials "admin" and password "admin". This can be chan>
+
+2. Add data source by selecting data source used. In this case we use MySQL.
+
+3. All the details such as database, user, password and host information.
+
+4. Then, the configuration is saved and tested to verify the connection.
+
+5. Select create new dashboard then select add new panel.
+
+6. In the measurements box, all the database and variables from MySQL are selected.
+
+7. All the data extracted will be shown in the graph in the dashboard. After all this have been done click apply.
+
+8. Two dashboards are created which is Ultrasonic sensor dashboard and Moisture sensor dashboard.  
+
+9. Lastly, save the dashboard and now it will show all the data received from MySQL
