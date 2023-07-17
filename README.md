@@ -37,9 +37,10 @@ If the service not running, start it using this command.
 ```bash
 sudo systeml start mosquitto
 ```
-3. Test Mosquitto. Open another terminal and subscribe to a topic.
+3. Test Mosquitto. Open 2 new terminal and subscribe to a topic.
 ```bash
-mosquitto_sub -t test/topic
+mosquitto_sub -t sensor/moisture
+mosquitto_sub -t sensor/ultrasonic
 ```
 4. Try sending a message into your topic.
 ```bash
