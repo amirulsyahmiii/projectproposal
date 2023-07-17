@@ -110,6 +110,138 @@ python3 manage.py runserver
 
 ## Step 4: MySQL
 
+pen the terminal
+
+1. Install the MySQL server package:
+
+```bash
+sudo apt install mysql-server
+```
+
+2. During the installation process, you'll be prompted to set a password for th>
+
+3. Start the MySQL service by running:
+
+```bash
+sudo systemctl start mysql
+```
+4. You can check whether the service is running by using command:
+
+```bash
+sudo systemctl status mysql
+```
+
+   If MySQL is running, you should see output indicating that it is active and >
+
+5. Change the IP address at the 'bind-address' to allow it connected to any IP >
+
+```bash
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf mysql
+```
+
+6. Restart MySQL to apply the configuration changes by running the following co>
+
+```bash
+sudo systemctl restart mysql
+```
+
+7. Verify that MySQL is listening on all IP addresses by running the following >
+
+``bash
+sudo netstat -tuln | grep 3306
+```
+or
+
+```bash
+sudo ss -tuln | grep 3306
+```
+
+8. Connect to the MySQL server using the root account and the password you set >
+
+```bash
+mysql -u root -p
+```
+
+9. After enter MySQL command-line interface, create a new database by running t>
+
+```bash
+CREATE DATABASE myapp_sensordata;
+```
+
+10. Create a new MySQL user and grant it privileges on the database by running >
+
+```bash
+CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON myapp_sensordata.* TO 'username'@'%';
+FLUSH PRIVILEGES;
+```
+
+11. Show the database available in mySQl and use the database that we want to u>
+
+```bash
+SHOW databases;
+USE myapp_sensordata;
+```
+
+2. Create table for the database:
+```bash
+CREATE TABLE myapp_sensordata (
+    id data_type1 [constraints],
+    ultrasonic_data INT,
+    moisture_data FLOAT,
+    timestamp FLOAT
+);
+```
+
+13. In Django project, open the 'settings.py' file located in the project's dir>
+
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myapp_sensordata',
+        'USER': 'username',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+);
+```
+
+14. Create a Django app within project using the following command:
+
+```bash
+python manage.py startapp myapp
+```
+
+15. Update the 'models.py':
+
+```bash
+from django.db import models
+
+class SensorData(models.Model):
+    timestamp = models.DateTimeField(auto_now_add=True)
+    ultrasonic_data = models.IntegerField()
+    moisture_data = models.FloatField()
+```
+16. Migrate the database:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+
+```
+
+17. After that, go to MySQL interface and type the command for calling the tabl>
+
+```bash
+SELECT * FROM myapp_sensordata;
+
+```
+
+Data from Django is stored to MySQL
+
 
 ## Step 5: Grafana
 Open browser and enter http://your_ip:3000 by using own IP address
